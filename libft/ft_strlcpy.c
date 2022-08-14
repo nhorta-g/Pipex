@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nhorta-g <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nhorta-g <nhorta-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 18:32:54 by nhorta-g          #+#    #+#             */
-/*   Updated: 2022/02/17 16:26:52 by nhorta-g         ###   ########.fr       */
+/*   Updated: 2022/08/14 12:40:43 by nhorta-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 			dst[i] = src[i];
 			i++;
 		}
-	dst[i] = '\0';
+		dst[i] = '\0';
 	}
 	while (src[i])
 		i++;

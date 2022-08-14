@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhorta-g <nhorta-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 17:14:01 by nhorta-g          #+#    #+#             */
-/*   Updated: 2022/08/14 12:41:00 by nhorta-g         ###   ########.fr       */
+/*   Created: 2022/07/27 12:49:04 by nhorta-g          #+#    #+#             */
+/*   Updated: 2022/08/14 12:39:22 by nhorta-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef PIPEX_H
+# define PIPEX_H
 
-char	*ft_strchr(const char *s, int c)
-{
-	int		i;
+# include <unistd.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# include <sys/wait.h>
+# include <time.h>
+# include "../libft/libft.h"
 
-	i = 0;
-	while (s[i] && s[i] != (char)c)
-		i++;
-	if (s[i] == (char)c)
-		return ((char *)(s + i));
-	return (NULL);
-}
+void	free_matrix(char **matrix);
+int		end_and_error_message(char *msg);
+void	ft_close_parent_pipes(int *pipe_fd);
+void	execute(char *argv_cmd, char **envp);
+
+#endif
